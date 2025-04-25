@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pilgrimage AI Smartwatch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #fdf6ee;
+      color: #2a2a2a;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      z-index: 999;
+    }
+    nav a {
+      color: #c7a740;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 6rem 2rem 5rem;
+      max-width: 1100px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 1s ease;
+    }
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      text-align: center;
+      color: #c7a740;
+      margin-bottom: 2rem;
+    }
+    .grid {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      border: 2px solid #c7a740;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      width: 280px;
+      text-align: center;
+    }
+    .heatmap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .heatbox {
+      padding: 1.5rem;
+      border-radius: 12px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .safe { background: #c3e6cb; }
+    .warn { background: #ffeeba; }
+    .danger { background: #f5c6cb; box-shadow: 0 0 15px rgba(245, 50, 50, 0.3); }
+    .emergency-btn {
+  background: #c7a740;
+  color: white;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: block;
+  margin: 2rem auto 0;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+.emergency-btn:hover {
+  background: #b08a32;
+}
+.video-container {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    video {
+      background-color: #fdf6ee;
+      width: 45%;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 3rem;
+      background: #f2e8dc;
+      color: #555;
+      margin-top: 5rem;
+    }
+  </style>
+</head>
+<body>
+<img src="ChatGPT Image Apr 24, 2025, 04_07_33 PM.png" alt="Intro Image" style="width: 100%; display: block; margin-bottom: -4rem;" />
+  <nav>
+    <a href="#vitals">Vitals</a>
+    <a href="#watch">The Watch</a>
+    <a href="#environment">Live Stats</a>
+    <a href="#heatmap">Heatmap</a>
+    <a href="#prototypes">Prototypes</a>
+  </nav>
+
+  <section class="fade" id="vitals">
+    <h2 class="section-title">AI Vital Monitoring</h2>
+    <div class="grid">
+      <div class="card"><h3>AI-Driven Insights</h3><p>Smart algorithms track vitals in real-time.</p></div>
+      <div class="card"><h3>Heart Rate Status</h3><p>Real-time BPM analysis detects stress.</p></div>
+      <div class="card"><h3>Temperature Trends</h3><p>Predictive models for overheating risk.</p></div>
+    </div>
+  </section>
+
+  <section class="fade" id="watch">
+    <h2 class="section-title">Meet the Watch</h2>
+    <div class="grid">
+      <div class="card"><h3>Hydration Sensor</h3><p>Alerts before dehydration kicks in.</p></div>
+      <div class="card"><h3>Pulse Monitor</h3><p>Monitors physical stress and exhaustion.</p></div>
+      <div class="card"><h3>AI Chip</h3><p>Context-aware decisions, real-time.</p></div>
+    </div>
+  </section>
+
+  <section class="fade" id="environment">
+    <h2 class="section-title">Live Pilgrimage Environment</h2>
+    <div class="grid">
+      <div class="card"><h3>☀️ Temperature</h3><p>41°C in Makkah (RealFeel 44°C)</p></div>
+      <div class="card"><h3>💧 Humidity</h3><p>32% moderate humidity</p></div>
+      <div class="card"><h3>🧕🏽 Pilgrims Nearby</h3><p>6,823 in this zone</p></div>
+    </div>
+  </section>
+
+  <section class="fade" id="heatmap">
+    <h2 class="section-title">Heatmap Zones</h2>
+    <div class="heatmap-grid">
+      <div class="heatbox safe">Zone A – Safe</div>
+      <div class="heatbox warn">Zone B – Monitor</div>
+      <div class="heatbox danger">Zone C – Emergency</div>
+      <div class="heatbox safe">Zone D – Safe</div>
+      <div class="heatbox warn">Zone E – Monitor</div>
+      <div class="heatbox safe">Zone F – Safe</div>
+    </div>
+  </section>
+
+  <section class="fade" id="prototypes">
+    <h2 class="section-title">3D Smartwatch Prototype Videos</h2>
+    <div class="video-container">
+      <video autoplay loop muted controls>
+        <source src="prototype-video-1.mp4" type="video/mp4" />
+      </video>
+      <video autoplay loop muted controls>
+        <source src="prototype-video-2.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </section>
+
+  
+  <section class="fade" id="paramedics">
+    <h2 class="section-title">Paramedic Data Access</h2>
+    <button class="emergency-btn" onclick="toggleEmergency()">Show Emergency View</button>
+    <div id="emergencyView" class="emergency-view" style="display:none; margin-top:2rem; background:white; padding:2rem; border-radius:12px; border:2px solid #c7a740; box-shadow:0 6px 20px rgba(0,0,0,0.08); text-align:center;">
+      
+      <video id="emergencyVideo" style="width: 100%; height: 100%; max-width: 100%; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.15);" controls muted>
+        <source src="paramedics-vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Pilgrimage AI — Honoring every step with technology and care.
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('.fade');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+  <script>
+    function toggleEmergency() {
+      const view = document.getElementById('emergencyView');
+      const video = document.getElementById('emergencyVideo');
+      if (view.style.display === 'block') {
+        view.style.display = 'none';
+        video.pause();
+        video.currentTime = 0;
+      } else {
+        view.style.display = 'block';
+        video.play();
+      }
+    }
+  </script>
+</body>
+</html>
